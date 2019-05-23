@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: tanium
+Version: 1.0.1
+Summary: Resilient Circuits Components for 'tanium'
+Home-page: UNKNOWN
+Author: Jaroslav Brtan
+Author-email: jaroslav.brtan@gmail.com
+License: MIT
+Description-Content-Type: UNKNOWN
+Description: Suite of function for querying the Tanium endpoints
+Platform: any
+Classifier: Programming Language :: Python

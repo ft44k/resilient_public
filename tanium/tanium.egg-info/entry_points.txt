@@ -1,0 +1,19 @@
+[resilient.circuits.components]
+TaniumGetAssetInfoFunctionComponent = tanium.components.tanium_get_asset_info:FunctionComponent
+TaniumGetAutorunsFunctionComponent = tanium.components.tanium_get_autoruns:FunctionComponent
+TaniumGetInstalledAppsFunctionComponent = tanium.components.tanium_get_installed_apps:FunctionComponent
+TaniumGetIpConnsFunctionComponent = tanium.components.tanium_get_ip_conns:FunctionComponent
+TaniumGetOpenPortsFunctionComponent = tanium.components.tanium_get_open_ports:FunctionComponent
+TaniumGetProcessesFunctionComponent = tanium.components.tanium_get_processes:FunctionComponent
+TaniumOnlineCheckFunctionComponent = tanium.components.tanium_online_check:FunctionComponent
+TaniumSweepForHashFunctionComponent = tanium.components.tanium_sweep_for_hash:FunctionComponent
+
+[resilient.circuits.configsection]
+gen_config = tanium.util.config:config_section_data
+
+[resilient.circuits.customize]
+customize = tanium.util.customize:customization_data
+
+[resilient.circuits.selftest]
+selftest = tanium.util.selftest:selftest_function
+
