@@ -61,6 +61,8 @@ The resulting .tar.gz file can be installed using
 
 `pip install <filename>.tar.gz`
 
+The dist folder contains actual version of the app.
+
 
 Import customization
 `resilient-circuits customize -y`
