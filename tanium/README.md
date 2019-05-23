@@ -1,6 +1,6 @@
 # Tanium
 
-contains functions, workflows, rules for quering the Tanium.
+contains functions, workflows, rules for querying the Tanium.
 
 Functions:
 * tanium_get_asset_info 
