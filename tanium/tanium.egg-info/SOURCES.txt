@@ -10,6 +10,7 @@ tanium.egg-info/entry_points.txt
 tanium.egg-info/requires.txt
 tanium.egg-info/top_level.txt
 tanium/components/__init__.py
+tanium/components/tanium_agent_search.py
 tanium/components/tanium_get_asset_info.py
 tanium/components/tanium_get_autoruns.py
 tanium/components/tanium_get_installed_apps.py

@@ -5,13 +5,13 @@ from setuptools import setup, find_packages
 
 setup(
     name='tanium',
-    version='1.0.1',
+    version='1.0.2',
     license='MIT',
     author='Jaroslav Brtan',
     author_email='jaroslav.brtan@gmail.com',
     url='',
     description="Resilient Circuits Components for 'tanium'",
-    long_description="Suite of function for querying the Tanium endpoints",
+    long_description="Suite of functions for querying the Tanium endpoints",
     install_requires=[
         'resilient_circuits>=30.0.0'
     ],
@@ -27,6 +27,7 @@ setup(
             "TaniumGetProcessesFunctionComponent = tanium.components.tanium_get_processes:FunctionComponent",
             "TaniumGetOpenPortsFunctionComponent = tanium.components.tanium_get_open_ports:FunctionComponent",
             "TaniumOnlineCheckFunctionComponent = tanium.components.tanium_online_check:FunctionComponent",
+            "TaniumAgentSearchFunctionComponent = tanium.components.tanium_agent_search:FunctionComponent",
             "TaniumSweepForHashFunctionComponent = tanium.components.tanium_sweep_for_hash:FunctionComponent",
             "TaniumGetInstalledAppsFunctionComponent = tanium.components.tanium_get_installed_apps:FunctionComponent",
             "TaniumGetAssetInfoFunctionComponent = tanium.components.tanium_get_asset_info:FunctionComponent",

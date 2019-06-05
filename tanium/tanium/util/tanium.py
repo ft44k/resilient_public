@@ -18,6 +18,7 @@ from datetime import datetime, timedelta
 import StringIO
 import csv
 import time
+import json
 
 
 #this has to point to the pytan folder
@@ -103,6 +104,33 @@ class TaniumWorker(object):
         handler = pytan.Handler(**handler_args)
 
         return handler
+
+    def run_objectype_question(self, objtype):
+
+      logger = logging.getLogger(__name__)
+      function_name = sys._getframe().f_code.co_name
+      
+      kwargs = {}
+      kwargs['objtype'] = objtype
+      response = False
+      
+      try:
+        response = self.pytan_handler.get_all(**kwargs)
+      except Exception as e:
+        logger.error("ERROR {}: {}\n".format(function_name, str(e)))
+        return False
+      finally:
+        pass
+      
+      out = False
+      if response:
+        #call the export_obj() method to convert response to JSON
+        export_kwargs = {}
+        export_kwargs['obj'] = response
+        export_kwargs['export_format'] = 'json'
+        out = self.pytan_handler.export_obj(**export_kwargs)
+      
+      return out
 
     def run_manual_question_for_host(self, sensors, computer_name=0, md5hash=0):
 
@@ -614,3 +642,26 @@ class TaniumWorker(object):
                 else:
                     saw_header = 1
         return serial_number
+
+    def check_agent(self, hostname):
+
+        logger = logging.getLogger(__name__)
+        function_name = sys._getframe().f_code.co_name
+
+        # DEBUG
+        logger.debug("{} called".format(function_name))
+
+        out = self.run_objectype_question(objtype=u'client')
+        
+        if out:
+          content = json.loads(out)
+          
+          for entry in content['client_status']:
+            if entry['host_name'].startswith(hostname):
+              return {
+              "hostname":entry['host_name'],
+              "ipaddress_client":entry['ipaddress_client'],
+              "last_seen":entry['last_registration']
+              }
+        
+        return False

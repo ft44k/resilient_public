@@ -1,4 +1,5 @@
 [resilient.circuits.components]
+TaniumAgentSearchFunctionComponent = tanium.components.tanium_agent_search:FunctionComponent
 TaniumGetAssetInfoFunctionComponent = tanium.components.tanium_get_asset_info:FunctionComponent
 TaniumGetAutorunsFunctionComponent = tanium.components.tanium_get_autoruns:FunctionComponent
 TaniumGetInstalledAppsFunctionComponent = tanium.components.tanium_get_installed_apps:FunctionComponent
