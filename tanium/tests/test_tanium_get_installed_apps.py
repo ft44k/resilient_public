@@ -35,20 +35,15 @@ class TestTaniumGetInstalledApps:
         func = get_function_definition(PACKAGE_NAME, FUNCTION_NAME)
         assert func is not None
 
-    @pytest.mark.parametrize("tanium_endpoint, incident_id, tanium_user, tanium_password, tanium_host, tanium_port, tanium_pytan_loc, expected_results", [
-        ("text", 123, "text", "text", "text", "text", "text", {"value": "xyz"}),
-        ("text", 123, "text", "text", "text", "text", "text", {"value": "xyz"})
+    @pytest.mark.parametrize("tanium_endpoint, incident_id, expected_results", [
+        ("text", 123, {"value": "xyz"}),
+        ("text", 123, {"value": "xyz"})
     ])
-    def test_success(self, circuits_app, tanium_endpoint, incident_id, tanium_user, tanium_password, tanium_host, tanium_port, tanium_pytan_loc, expected_results):
+    def test_success(self, circuits_app, tanium_endpoint, incident_id, expected_results):
         """ Test calling with sample values for the parameters """
         function_params = { 
             "tanium_endpoint": tanium_endpoint,
-            "incident_id": incident_id,
-            "tanium_user": tanium_user,
-            "tanium_password": tanium_password,
-            "tanium_host": tanium_host,
-            "tanium_port": tanium_port,
-            "tanium_pytan_loc": tanium_pytan_loc
+            "incident_id": incident_id
         }
         results = call_tanium_get_installed_apps_function(circuits_app, function_params)
         assert(expected_results == results)

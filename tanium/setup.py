@@ -5,13 +5,13 @@ from setuptools import setup, find_packages
 
 setup(
     name='tanium',
-    version='1.0.2',
+    version='1.0.3',
     license='MIT',
     author='Jaroslav Brtan',
     author_email='jaroslav.brtan@gmail.com',
     url='',
     description="Resilient Circuits Components for 'tanium'",
-    long_description="Suite of functions for querying the Tanium endpoints",
+    long_description="Resilient Circuits Components for 'tanium'",
     install_requires=[
         'resilient_circuits>=30.0.0'
     ],
