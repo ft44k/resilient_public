@@ -63,6 +63,7 @@ The resulting .tar.gz file can be installed using
 `pip install <filename>.tar.gz`
 
 Update your app.config so it contains the [tanium] section
+
 `resilient-circuits config -u`
 
 and edit the config file
